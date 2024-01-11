@@ -41,7 +41,16 @@ def ListEpisodes() -> List[EpisodeInfo]:
     SIMPLE_SCRAPER_LIST_EPISODES_BASE_URL = os.getenv('SIMPLE_SCRAPER_LIST_EPISODES_BASE_URL')
 
     data = fetch_episode_data(SIMPLE_SCRAPER_API_KEY, SIMPLE_SCRAPER_RUN_NOW, SIMPLE_SCRAPER_LIST_EPISODES_BASE_URL)
-    return [EpisodeInfo(episode=item['episode'], episode_link=item['episode_link']) for item in data.get("data", [])]
+    episodes = [EpisodeInfo(episode=item['episode'], episode_link=item['episode_link']) for item in data.get("data", [])]
+
+    # Filter the episodes to make sure they have unique links
+    filtered_episodes: List[EpisodeInfo] = []
+
+    for episode in episodes:
+        if episode['episode_link'] not in [item['episode_link'] for item in filtered_episodes]:
+            filtered_episodes.append(episode)
+
+    return filtered_episodes
 
 # Example usage:
 if __name__ == "__main__":
