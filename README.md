@@ -31,7 +31,10 @@ Then you can use the following links to create the API endpoints for find music 
 * Find Music Played: https://simplescraper.io/?sharedRecipe=OUURg8kASjuxbXvdGO0B
 * List Episodes: https://simplescraper.io/?sharedRecipe=lif7as8Izq4szUQ1hCOg
 
-Then on the left sidebar go to "My Recipes" and then click each recipe, then go to the "API" tab and copy the API URL and paste it into the `.env` file (per recipe).
+Then on the left sidebar go to "My Recipes" and then click each recipe, then go to the "API" tab and copy the API URL and paste it into the `.env` file (per recipe), and extract the API key and put in the API key variable.
+
+Example base url: SIMPLE_SCRAPER_FIND_MUSIC_PLAYED_BASE_URL=https://simplescraper.io/api/lif7as8Izq4szUQ1hCOg
+
 
 ### Spotify Setup
 
