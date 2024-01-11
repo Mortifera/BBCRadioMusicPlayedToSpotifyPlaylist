@@ -23,7 +23,7 @@ SPOTIFY_PLAYLIST_ID=<your_spotify_playlist_id>
 
 Replace the values with the appropriate values.
 
-### SimpleScrsper Setup
+### SimpleScraper Setup
 
 To setup simple scraper first go to: https://simplescraper.io/ and create an account.
 
