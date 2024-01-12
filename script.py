@@ -14,14 +14,7 @@ def main():
     SPOTIFY_PLAYLIST_ID = os.getenv('SPOTIFY_PLAYLIST_ID')
     episodes: List[EpisodeInfo] = ListEpisodes()
 
-    # Filter the episodes to make sure they have unique links
-    filtered_episodes: List[EpisodeInfo] = []
-
     for episode in episodes:
-        if episode['episode_link'] not in [item['episode_link'] for item in filtered_episodes]:
-            filtered_episodes.append(episode)
-
-    for episode in filtered_episodes:
         print(f"Episode: {episode['episode']}")
         print(f"Link: {episode['episode_link']}")
         music_tracks = FindMusicPlayed(episode['episode_link'])
